@@ -5,7 +5,7 @@ date:   2019-04-21
 categories: ruby
 ---
 
-Without even knowing it’s definition, the Single-Responsibility Principle (SRP) sounds like it would be a good thing for your code; after all, anything that has one responsibility is likely to be smaller, less complex, and more maintainable than something that has multiple responsibilities. But SRP gives us even more than that.
+Without even knowing it’s definition, the Single-Responsibility Principle (SRP) sounds like it would be a good thing for your code; after all, anything that has one responsibility is likely to be smaller, less complex, and more maintainable than something that has multiple responsibilities. But the SRP gives us even more than that.
 
 The authors of _Agile Software Development: Principles, Patterns, and Practices_ (PPP) explain that responsibilities that live within the same class are coupled, and this coupling can impair our ability to make otherwise reasonable changes. In classes with coupled responsibilities, changes to one responsibility may adversely affect the class’s ability to uphold another.
 
@@ -13,7 +13,7 @@ Understanding what we mean by “responsibility”, however, can be difficult. A
 
 _An important note: when we use the term "changes", we mean changes to the actual code of the class, not changes to the state of the object at run time._
 
-Let’s look at some code that violates SRP. I have a class in my Ruby implementation of Battleship that controls the flow of the game—it determines whose turn it is, tells the players to take their turns, and ends the game when a player has lost all of their ships.
+Let’s look at some code that violates the SRP. I have a class in my Ruby implementation of Battleship that controls the flow of the game—it determines whose turn it is, tells the players to take their turns, and ends the game when a player has lost all of their ships.
 
 {% highlight ruby %}
 class Game
@@ -53,7 +53,7 @@ class Game
 end
 {% endhighlight %}
 
-This code violates SRP because of the multiple ways in which it might change. For example, if we wanted to end a game when a player "surrendered", we would have to edit the `game_over?` method to account for this case. And if we wanted to change something about the mechanics of a game's turns (maybe we want to allow more than two players), then the logic to determine who is the `current_player` and who is the `current_opponent` would have to be adjusted. Having two distinct ways in which this class could potentially change is a signal that we’re violating SRP.
+This code violates the SRP because of the multiple ways in which it might change. For example, if we wanted to end a game when a player "surrendered", we would have to edit the `game_over?` method to account for this case. And if we wanted to change something about the mechanics of a game's turns (maybe we want to allow more than two players), then the logic to determine who is the `current_player` and who is the `current_opponent` would have to be adjusted. Having two distinct ways in which this class could potentially change is a signal that we’re violating the SRP.
 
 To fix this, we can remove one of the responsibilities from the `Game` class and give it a new home.
 
@@ -99,4 +99,4 @@ end
 
 Our `Game` class is now smaller and has one less responsibility, and the `GameRules` class has the single responsibility of determining whether a game is over. This code would make it easier for us to implement either of the two potential changes we came up with earlier.
 
-We’ve just seen an example of how to address a violation of SRP, but that does not mean that we _should_ have done this refactoring. The authors of PPP warn that if an application is not _actually_ changing in a way that would cause the responsibilities to change at different times, a separation of responsibilities adds needless complexity. Until we have a real reason to, there is no need to separate them.
+We’ve just seen an example of how to address a violation of the SRP, but that does not mean that we _should_ have done this refactoring. The authors of PPP warn that if an application is not _actually_ changing in a way that would cause the responsibilities to change at different times, a separation of responsibilities adds needless complexity. Until we have a real reason to, there is no need to separate them.
