@@ -5,7 +5,7 @@ date:   2019-04-28
 categories: ruby
 ---
 
-We saw in the previous [post on the Open-Closed Principle]({{ site.baseurl }}{% post_url 2019-04-22-open-closed-principle %}) that polymorphism is one of the most powerful tools in our Object-Oriented design tool belt. Having classes inherit from each other is one way to achieve polymorphism, and the The Liskov Substitution Principle (LSP) provides important guidelines for building inheritance hierarchies without making our code brittle.
+We saw in the previous [post on the Open-Closed Principle]({{ site.baseurl }}{% post_url 2019-04-22-open-closed-principle %}) that polymorphism is one of the most powerful tools in our object-oriented design tool belt. Having classes inherit from each other is one way to achieve polymorphism, and the The Liskov Substitution Principle (LSP) provides important guidelines for building inheritance hierarchies without making our code brittle.
 
 The LSP requires that a parent class can be replaced by any of its subclasses without incurring unexpected behaviour. Let's look at an example of some code that violates the LSP.
 
