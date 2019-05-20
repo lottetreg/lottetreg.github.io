@@ -18,8 +18,11 @@ public class Employee {
     this.desk = desk;
   }
 }
+{% endhighlight %}
 
-// This is how we create new employees
+This is how we create new employees.
+
+{% highlight java %}
 Employee employee = new Employee("pickles@gmail.com", new Desk());
 {% endhighlight %}
 
