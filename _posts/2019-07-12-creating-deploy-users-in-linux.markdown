@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Creating a User in Linux for Deployment"
+title:  "Creating Deploy Users in Linux"
 date:   2019-07-12
 ---
 

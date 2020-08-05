@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Understanding and Using File Permissions"
+title:  "File Permissions"
 date:   2019-07-17
 ---
 
