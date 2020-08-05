@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "TIL: The Unix Time Command"
+title:  "The Unix Time Command"
 date:   2020-07-31
 ---
 

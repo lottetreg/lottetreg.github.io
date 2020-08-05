@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "TIL: Semantic HTML"
+title:  "Semantic HTML"
 date:   2020-06-10
 ---
 
