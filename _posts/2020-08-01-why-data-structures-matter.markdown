@@ -66,7 +66,3 @@ Although there are different kinds of sets, in this chapter the author is only c
 While reading, searching, and deleting are the same for both arrays and sets, this is not the case for insertion. Because the set needs to confirm that it does not already contain the value before inserting it, it first runs a search. We've already seen that a search takes _N_ steps for an array with _N_ elements, and that a pure insertion takes _N + 1_ steps. Adding these together, we can see that a set insertion requires _2N + 1_ steps.
 
 Sets are important if you need to ensure you have no duplicate data, but if you don't, an array may be more performant for insertions.
-
-## Up next
-
-In the next chapter we'll use what we've learned about time complexity to compare the performance of algorithms (even within the same data structures).
