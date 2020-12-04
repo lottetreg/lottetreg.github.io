@@ -1,0 +1,73 @@
+---
+layout: post
+title:  "What Makes Good Software?"
+date:   2020-08-22
+---
+
+Well-documented
+- Documenting all entry points into the system?
+- for APIs, automatically generated from specs (makes it easy to continue to add documentation, and because they're based on the actual API, you know they're right)
+- READMEs are kept up-to-date, include info on how to get set up environment and get all tests to pass, anything else that should be in the README? (known problems and how  to solve them?)
+
+Is simple (?)
+- From the 4 rules of simple design (link)
+
+Well-tested (test coverage tools?)
+- Types? At least unit, but what about integration? Maybe talk about the test triangle?
+- Front end and back end?
+
+Readable
+- What makes code readable?
+- Comments in the code, every method has a comment that describes what it does, what params it takes, and what it returns (TS docs, inline documentation)
+  - you can give you methods good names, make them clear, but will still be some hidden meaning
+- Good software is for humans, first and foremost
+- (see post on 4 principles of software design)
+
+Maintainable
+- Abstractions, modular, pieces can easily be swapped out (depenency injection)
+- consistent styling
+- single responsibility, modules are losely-coupled (do not know how things in other classes work, just know what)
+- Code is open to extension and closed to modification (link Open-Closed Principle, or all of SOLID posts?)
+
+Good deployment process
+- CI/CD pipeline
+- integrated with Github, ensure tests are passing before merging and deploying
+
+Measurable
+- Determine how the software performs outside of a test environment
+- Ex. how long does a page take to load, or an API endpoint take to respond?
+- adding paypal to checkout?
+
+Performant
+- what to look out for here?
+- appropriate database indices
+- SQL optimizations
+  - eager loading associations
+  - Batching queries? (what is this in AR/Ecto again?)
+- appropriate data structures and algorithms selected for the task at hand
+- threaded process, co-routine (low-level), make a new thread to do complex operatiosn, allowing the main thread to continue
+  - thread-safe (Ruby isn't thread safe by default (can you do it though?))
+- asynchronous process (deferring to an asynchronous queue) - email to user in sidekiq job
+
+Good User experience
+- Has been tested during the design phase (APIs - Spec Driven Design, or Design => Develop => Test => Deploy => Review)
+- Accessible (screen readers, browser compatibility)
+- Has been iterated on, with user testing and feedback
+
+Redundancy (aka it can handle the unexpected)
+- Can it handle the unexpected?
+- Follower database (what happens when the DB fails?)
+- What else could fail? Servers?
+
+Monitoring
+- Good error logs that give you a good idea of what went wrong and where
+- debuggable
+- Which services?
+- Services that ping you when there's a problem
+
+Secure
+- OWASP top 10
+
+
+
+
